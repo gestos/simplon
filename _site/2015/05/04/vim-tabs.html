@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>vim tabs</title>
+  <meta name="description" content="As I’m using vim inside urxvt and screen, it seems close to impossible to map the Ctrl-PgUp/Dn or Ctrl-Tab keybindings for tab-switching. So I was looking fo...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://www.gestos.de/2015/05/04/vim-tabs.html">
+  <link rel="alternate" type="application/rss+xml" title="Lustiges Krisenblog" href="http://www.gestos.de/feed.xml">
+</head>
+
+<body>
+
+<div id="blue_box">
+  <div id="left">
+    <img src="css/pix/me.png">
+  </div>
+  <div class="divider"></div>
+  <div id="header">
+    <h1>Gestos' lustiges Krisenblog</h1>
+  </div>
+  <div class="divider_h"></div>
+  <div id="right">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h2 class="post-title" itemprop="name headline">vim tabs</h1>
+    <p class="post-meta"><time datetime="2015-05-04T03:26:52+02:00" itemprop="datePublished">May 4, 2015</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>As I’m using vim inside urxvt and screen, it seems close to impossible to map the Ctrl-PgUp/Dn or Ctrl-Tab keybindings for tab-switching. So I was looking for another way. 
+Possible solutions: 
+a) just use gt or gT in command mode; 
+b) work with buffers instead of tabs. There’s a very interesting article here https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/ that lead me to my, now, favourite solution
+c) I like using tabs the wrong way I guess, but the article told me about the “leader” key, which can be defined in the vimrc. That still requires being in command mode, unfortunately, but it’s still pretty quick compared to :tabnext or even :<up>. 
+I mapped the leader key to the spacebar like <code>let mapleader = " "</code> and then gave the tabnext shortcut with <code>nmap <leader><space> :tabnext<cr>&lt;/code&gt;
+that's a nice way to cycle through multiple tabs, I guess</cr></space></leader></code></up></p>
+
+  </div>
+
+</article>
+
+  </div>
+</div>
+</div>
+</body>
+</html>

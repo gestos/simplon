@@ -1,90 +1,78 @@
 body, html {
   margin: 0;
-  padding: 0;
-}
-
+padding: 0; }
 
 #left {
-  width:10%;
+  width: 15%;
   min-height: 800px;
-  float:left;
-  background: #51585C;
-}
-
+  float: left;
+background: #0A0B0C; }
 #right {
   min-height: 800px;
-  background: #A9C1C5 none repeat scroll 0% 0%;
+  background: #3A3B41 none repeat scroll 0% 0%;
   margin-top: 5%;
   margin-bottom: 2%;
-  width: 70%;
-  margin-left: 5%;
   float: left;
-  box-shadow: 15px 15px 30px -7px rgba(65,108,156,0.65);
+  box-shadow: 15px -15px 15px -10px rgba(65, 108, 156, 0.36);
   border-radius: 25px;
-  border-right: 3px solid #fff;
-  border-bottom: 3px solid #fff;
+  border-right: 1px solid #475E66;
+  border-top: 1px solid #475E66;
+  color: #E6DDCD;
+  padding: 5px 5%;
+  width: 50%;
+  margin-left: 7.5%;
 }
 
 #innerright {
-  background:green;
-  height:50px;
-}
+  background: green;
+height: 50px; }
 
 #header {
-  float:left;
+  float: left;
   background: rgba(169, 193, 197, 0.09) none repeat scroll 0% 0%;
   height: 80px;
-  margin: 5% 0 0 15%;
+  margin: 5% 0 0 12.5%;
   width: 50%;
   text-align: center;
-  border-radius: 100px;
-}
-
+border-radius: 100px; }
 
 #blue_box {
   position: relative;
   float: left;
-  background:#51585C;
-  width:100%;
-  padding:10px;
-}
-.divider{
-  position:absolute;
-  left:11%;
+  background: #0A0B0C;
+  width: 100%;
+padding: 0px; }
+
+.divider {
+  position: absolute;
+  left: 16%;
   width: 3px;
-  height:88%;
-  top:10%;
-  bottom:2%;
-  background: url('pix/bg1.png');
-}
-.divider_h{
-  float:left;
+  height: 88%;
+  top: 10%;
+  bottom: 2%;
+background: url("pix/bg1.png"); }
+
+.divider_h {
+  float: left;
   margin: 5% 0 0 -5%;
   width: 85%;
-  height:3px;
-  background: url('pix/bg2.png');
-}
-
-
+  height: 3px;
+background: url("pix/bg2.png"); }
 
 /* Textformatierungen */
-
 h1 {
   font-family: "Courier New";
   font-size: 3em;
-  text-shadow: 4px 4px 6px rgba(65, 108, 156, 0.86);
+  text-shadow: 4px -4px 6px rgba(65, 108, 156, 0.86);
   line-height: 80px;
   margin-top: -40px;
-  color: #CAE8F2;
-}
-@media only screen and (max-width : 928px) {
+color: #CAE8F2; }
+
+@media only screen and (max-width: 928px) {
   h1 {
     font-size: 2em;
     line-height: 40px;
-    margin-top: 0;
-  }
-}
-
+margin-top: 0; } }
 @media only screen and (max-width: 607px) {
   h1 {
     font-size: 1.2em;
