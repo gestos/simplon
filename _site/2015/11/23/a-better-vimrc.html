@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>a better vimrc</title>
+  <meta name="description" content="Using vim’s internal file explorer">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://www.gestos.de/2015/11/23/a-better-vimrc.html">
+  <link rel="alternate" type="application/rss+xml" title="Lustiges Krisenblog" href="http://www.gestos.de/feed.xml">
+</head>
+
+<body>
+
+<div id="blue_box">
+  <div id="left"></div>
+  <div class="divider"></div>
+  <div id="header">
+    <h1>Gestos' lustiges Krisenblog</h1>
+  </div>
+  <div class="divider_h"></div>
+  <div id="right">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h2 class="post-title" itemprop="name headline">a better vimrc</h1>
+    <p class="post-meta"><time datetime="2015-11-23T11:50:07+01:00" itemprop="datePublished">Nov 23, 2015</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="using-vims-internal-file-explorer">Using vim’s internal file explorer</h2>
+
+<p>I’ve seen this on <a href="https://medium.com/@mozhuuuuu/vimmers-you-dont-need-nerdtree-18f627b561c3">this</a> blogpost while looking up some proper keybindings for the NERDtree plugin.<br />
+Since I really don’t need anything more than just a simple filebrowser that can be toggled into view, this fits all my needs.  </p>
+
+<ul>
+  <li>activate the Explorer by type :E in command mode  </li>
+  <li>type “i” for changing list style or just put <em>let g:netrw_liststyle=3</em> in your .vimrc  </li>
+  <li>hitting enter on a file will open it in a new buffer (nerdtree seems to open files in new tabs)  </li>
+  <li>if you just want to leave the explorer view, simply go to the next buffer  </li>
+  <li>I’ve mapped <em>:E</em> to <em>&lt;ctrl-e&gt;</em> in my .vimrc, although that is only slightly, if at all, more convenient </li>
+</ul>
+
+  </div>
+
+</article>
+
+  </div>
+</div>
+</div>
+</body>
+</html>

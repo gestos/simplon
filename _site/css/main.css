@@ -196,6 +196,13 @@ body, html {
   bottom: 2%;
   background: url("pix/bg1.png"); }
 
+.divider_h {
+  float: left;
+  margin: 5% 0 0 -5%;
+  width: 85%;
+  height: 3px;
+  background: url("pix/bg2.png"); }
+
 /* Textformatierungen */
 h1 {
   font-family: "Courier New";
@@ -205,6 +212,16 @@ h1 {
   margin-top: -40px;
   color: #CAE8F2; }
 
+@media only screen and (max-width: 928px) {
+  h1 {
+    font-size: 2em;
+    line-height: 40px;
+    margin-top: 0; } }
+@media only screen and (max-width: 607px) {
+  h1 {
+    font-size: 1.2em;
+    line-height: 30px;
+    margin-top: 10px; } }
 /**
  * Syntax highlighting styles
  */
