@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+<div id="rahmen">
+<div id="oben">
+</div>
+<div id="linkeseite">
+</div>
+<div id="rechteseite">
+</div>
+</div>
+
+
+</body>
+
+</html>

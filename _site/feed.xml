@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lustiges Krisenblog</title>
+    <description>Spielplatz zum Design (und Jekyll) ausprobieren eventuell auch mal Content zu publizieren
+</description>
+    <link>http://www.gestos.de/</link>
+    <atom:link href="http://www.gestos.de/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 22 Nov 2015 13:19:25 +0100</pubDate>
+    <lastBuildDate>Sun, 22 Nov 2015 13:19:25 +0100</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Verzeichnisstruktur Jekyll</title>
+        <description>&lt;p&gt;Die Locations für verschiedene links in der hinterher erstellten index.html:
+Der Default-Template für den &amp;lt;head&amp;gt; Abschnitt verweist standardmäßig auf /css/main.css
+Was ich also in _sass/_layout.scss hineinschreibe, wird hinterher in _site/css/main.css vorhanden sein.
+Bilder, die auf der geladenen Seite z.b. in pix/bild.jpg verlinkt sind, kommen mit dem verzeichnis (pix) oder ohne in das css verzeichnis.
+nach dem build sind sie dann nach _site/css/(pix)/bild.jpg kopiert.&lt;br /&gt;
+Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _posts ordner liegen, nach irgendeiner Vorlage&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a: eine eigene Seite (die den normalen css enthält, gibts sicher auch noch templates für&lt;/li&gt;
+  &lt;li&gt;b: ein Exzerpt, das mit Datum und Titel an die Stelle, wo { content } eingefügt wurde, gerendert wird&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ausserdem nutzt der Standardtemplate anscheinend &amp;lt;h1&amp;gt; tags für die Seitentitel. Das ist natürlich nicht so gut, der Tag sollte ja dem Blogtitel vorbehalten sein&lt;/p&gt;
+</description>
+        <pubDate>Sun, 22 Nov 2015 13:10:59 +0100</pubDate>
+        <link>http://www.gestos.de/jekyll/update/2015/11/22/where.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/jekyll/update/2015/11/22/where.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 21 Nov 2015 08:52:59 +0100</pubDate>
+        <link>http://www.gestos.de/jekyll/update/2015/11/21/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/jekyll/update/2015/11/21/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>

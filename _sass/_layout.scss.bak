@@ -1,0 +1,24 @@
+html { height: 100%;
+}
+body {
+  height: 100%;
+}
+
+#rahmen {
+  height: 100%;
+}
+#oben {
+  background-color: rgb(25, 27, 30);
+  height: 10%;
+}
+#linkeseite {
+  float: left;
+  background-color: rgb(25, 27, 30);
+  width: 15%;
+  box-shadow: -10px 0px 4px -6px rgb(241, 254, 255) inset;
+  min-height: 90%;
+}
+#rechteseite {
+  background-color: rgb(25, 27, 30);
+  height: 90%;
+}

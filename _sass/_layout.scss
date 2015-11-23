@@ -1,0 +1,72 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+
+#left {
+  width:10%;
+  min-height: 800px;
+  float:left;
+  background: #51585C;
+}
+
+#right {
+  min-height: 800px;
+  background: #A9C1C5 none repeat scroll 0% 0%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  width: 70%;
+  margin-left: 5%;
+  float: left;
+  box-shadow: 15px 15px 30px -7px rgba(65,108,156,0.65);
+  border-radius: 25px;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+#innerright {
+  background:green;
+  height:50px;
+}
+
+#header {
+  float:left;
+  background: rgba(169, 193, 197, 0.09) none repeat scroll 0% 0%;
+  height: 80px;
+  margin: 5% 0 0 15%;
+  width: 50%;
+  text-align: center;
+  border-radius: 100px;
+}
+
+
+#blue_box {
+  position: relative;
+  float: left;
+  background:#51585C;
+  width:100%;
+  padding:10px;
+}
+.divider{
+  position:absolute;
+  left:11%;
+  width: 3px;
+  height:88%;
+  top:10%;
+  bottom:2%;
+  background: url('pix/bg1.png');
+}
+
+
+
+/* Textformatierungen */
+
+h1 {
+  font-family: "Courier New";
+  font-size: 3em;
+  text-shadow: 4px 4px 6px rgba(65, 108, 156, 0.86);
+  line-height: 80px;
+  margin-top: -40px;
+  color: #CAE8F2;
+}
