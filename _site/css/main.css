@@ -148,11 +148,21 @@ body, html {
   margin: 0;
   padding: 0; }
 
+#gestologo {
+  margin-bottom: 25%;
+  display: block; }
+
+.home {
+  padding-left: 10px; }
+
 #left {
   width: 15%;
   min-height: 800px;
   float: left;
-  background: transparent; }
+  background: transparent;
+  word-wrap: break-word;
+  font-size: .75em;
+  line-height: 1.5em; }
 
 #right {
   min-height: 800px;
@@ -162,16 +172,19 @@ body, html {
   float: left;
   box-shadow: 15px -15px 15px -10px rgba(65, 108, 156, 0.36);
   border-radius: 25px;
-  border-right: 1px solid #475E66;
-  border-top: 1px solid #475E66;
+  border-right: 1px solid #6DB2CB;
+  border-top: 1px solid #6DB2CB;
   color: #E6DDCD;
-  padding: 5px 5%;
-  width: 50%;
+  /*  padding: 5px 5%; */
+  width: 60%;
   margin-left: 7.5%; }
 
-#innerright {
-  background: green;
-  height: 50px; }
+#blogspalte {
+  background: transparent;
+  width: 100%;
+  min-height: 400px;
+  float: left;
+  border: none; }
 
 #header {
   float: left;
@@ -195,13 +208,13 @@ body, html {
   left: 16%;
   width: 3px;
   height: 88%;
-  top: 10%;
+  top: 100px;
   bottom: 2%;
   background: url("pix/bg1.png"); }
 
 .divider_h {
   float: left;
-  margin: 5% 0 0 -5%;
+  margin: 5% 0 0 -15px;
   width: 85%;
   height: 3px;
   background: url("pix/bg2.png"); }
