@@ -148,13 +148,16 @@ body, html {
   margin: 0;
   padding: 0; }
 
-#gestologo {
-  margin-left: 20px;
-  margin-bottom: 25%;
-  display: block; }
+pre, code {
+  background-color: #505050; }
 
-.home {
-  padding-left: 10px; }
+#blue_box {
+  position: relative;
+  float: left;
+  /* background: #0A0B0C; */
+  background: url("pix/tile1.png");
+  width: 100%;
+  padding: 0px; }
 
 #left {
   width: 15%;
@@ -164,6 +167,11 @@ body, html {
   word-wrap: break-word;
   font-size: .75em;
   line-height: 1.5em; }
+
+#gestologo {
+  margin-left: 20px;
+  margin-bottom: 25%;
+  display: block; }
 
 #left a {
   text-decoration: none; }
@@ -179,6 +187,39 @@ body, html {
   padding-left: 5%;
   margin-top: 3%;
   margin-bottom: 3%; }
+
+.divider {
+  position: absolute;
+  left: 16%;
+  width: 3px;
+  height: 88%;
+  top: 100px;
+  bottom: 2%;
+  background: url("pix/bg1.png"); }
+
+.divider_h {
+  float: left;
+  margin: 5% 0 0 -15px;
+  width: 85%;
+  height: 3px;
+  background: url("pix/bg2.png"); }
+
+#header {
+  float: left;
+  background: rgba(169, 193, 197, 0.09) none repeat scroll 0% 0%;
+  height: 80px;
+  margin: 5% 0 0 12.5%;
+  width: 50%;
+  text-align: center;
+  border-radius: 100px; }
+
+#header h1 {
+  font-family: "Courier New";
+  font-size: 3em;
+  text-shadow: 2px -2px 4px rgba(65, 108, 156, 0.86);
+  line-height: 80px;
+  margin-top: -40px;
+  color: rgba(193, 199, 221, 0.36); }
 
 #right {
   min-height: 800px;
@@ -223,48 +264,10 @@ body, html {
   float: right;
   padding-top: 1.5em; }
 
-#header {
-  float: left;
-  background: rgba(169, 193, 197, 0.09) none repeat scroll 0% 0%;
-  height: 80px;
-  margin: 5% 0 0 12.5%;
-  width: 50%;
-  text-align: center;
-  border-radius: 100px; }
+.blogpost p {
+  padding: 0 20px; }
 
-#blue_box {
-  position: relative;
-  float: left;
-  /* background: #0A0B0C; */
-  background: url("pix/tile1.png");
-  width: 100%;
-  padding: 0px; }
-
-.divider {
-  position: absolute;
-  left: 16%;
-  width: 3px;
-  height: 88%;
-  top: 100px;
-  bottom: 2%;
-  background: url("pix/bg1.png"); }
-
-.divider_h {
-  float: left;
-  margin: 5% 0 0 -15px;
-  width: 85%;
-  height: 3px;
-  background: url("pix/bg2.png"); }
-
-/* Textformatierungen */
-#header h1 {
-  font-family: "Courier New";
-  font-size: 3em;
-  text-shadow: 2px -2px 4px rgba(65, 108, 156, 0.86);
-  line-height: 80px;
-  margin-top: -40px;
-  color: rgba(193, 199, 221, 0.36); }
-
+/* Breakpoints */
 @media only screen and (min-width: 1588px) {
   #header h1 {
     font-size: 3em;
@@ -280,9 +283,6 @@ body, html {
     font-size: 1.2em;
     line-height: 30px;
     margin-top: 10px; } }
-pre, code {
-  background-color: #505050; }
-
 /**
  * Syntax highlighting styles
  */
