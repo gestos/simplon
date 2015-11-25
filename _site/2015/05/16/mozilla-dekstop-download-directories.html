@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<head>
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,36 +14,244 @@
   <link rel="alternate" type="application/rss+xml" title="Lustiges Krisenblog" href="http://www.gestos.de/feed.xml">
 </head>
 
-<body>
+  <body>
 
-<div id="blue_box">
-  <div id="left">
-    <a href="/"><img id="gestologo" src="/css/pix/me.png"></a>
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <div id="blue_box">
+      <div id="left">
+	<a href="/"><img id="gestologo" src="/css/pix/me.png"></a>
+	<h2>alle posts</h2>
+	
+	<div class="home-titel">
+	  <a href="/2015/11/23/a-better-vimrc.html">a better vimrc</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/jekyll/update/2015/11/22/where.html">Verzeichnisstruktur Jekyll</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/jekyll/update/2015/11/21/welcome-to-jekyll.html">Welcome to Jekyll!</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/05/16/mozilla-dekstop-download-directories.html">Mozilla Dekstop Download Directories</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/05/07/adjust-cursor-color-for-vim-and-urxvt.html">adjust cursor color for vim and urxvt</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/05/04/css-completion-in-vim.html">css completion in vim</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/05/04/vim-tabs.html">vim tabs</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/05/03/ntree.html">ntree</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/05/03/apache-process-spawning.html">apache process spawning</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/05/02/improved-rakefiles.html">improved rakefiles</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/05/02/customizing-pt-1.html">customizing, pt. 1</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/05/02/hello.html">Hello</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2014/05/02/Hello-World.html">first glance at working with git</a>
+	</div>
+      
+      </div>
+      <div class="divider"></div>
+      <div id="header">
+	<h1>Gestos' lustiges Krisenblog</h1>
+      </div>
+      <div class="divider_h"></div>
+      <div id="right">
+	
+	<div class="blogpost">
+	  <h1>a better vimrc<span class="blogpost-datum">2015-11-23 11:50:07 +0100</span></h1>
+	  ## Using vim's internal file explorer
 
-  <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Mozilla Dekstop Download Directories</h1>
-    <p class="post-meta"><time datetime="2015-05-16T01:17:19+02:00" itemprop="datePublished">May 16, 2015</time></p>
-  </header>
+I've seen this on [this](https://medium.com/@mozhuuuuu/vimmers-you-dont-need-nerdtree-18f627b561c3) blogpost while looking up some proper keybindings for the NERDtree plugin.  
+Since I really don't need anything more than just a simple filebrowser that can be toggled into view, this fits all my needs.  
 
-  <div class="post-content" itemprop="articleBody">
-    <p>If you use Firefox or Iceweasel as I do, you may wonder about the “Desktop” and “Download” directories it creates every time you save anything to disk, even if you explicitly set ff to ask you where to save your stuff.
++  activate the Explorer by type :E in command mode  
++  type "i" for changing list style or just put *let g:netrw_liststyle=3* in your .vimrc  
++  hitting enter on a file will open it in a new buffer (nerdtree seems to open files in new tabs)  
++  if you just want to leave the explorer view, simply go to the next buffer  
++  I've mapped *:E* to *\<ctrl-e\>* in my .vimrc, although that is only slightly, if at all, more convenient 
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>Verzeichnisstruktur Jekyll<span class="blogpost-datum">2015-11-22 13:10:59 +0100</span></h1>
+	  Die Locations für verschiedene links in der hinterher erstellten index.html:
+Der Default-Template für den <head> Abschnitt verweist standardmäßig auf /css/main.css
+Was ich also in _sass/_layout.scss hineinschreibe, wird hinterher in _site/css/main.css vorhanden sein.
+Bilder, die auf der geladenen Seite z.b. in pix/bild.jpg verlinkt sind, kommen mit dem verzeichnis (pix) oder ohne in das css verzeichnis.
+nach dem build sind sie dann nach _site/css/(pix)/bild.jpg kopiert.  
+Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _posts ordner liegen, nach irgendeiner Vorlage  
+
+* a: eine eigene Seite (die den normalen css enthält, gibts sicher auch noch templates für  
+* b: ein Exzerpt, das mit Datum und Titel an die Stelle, wo { content } eingefügt wurde, gerendert wird
+
+ausserdem nutzt der Standardtemplate anscheinend <h1> tags für die Seitentitel. Das ist natürlich nicht so gut, der Tag sollte ja dem Blogtitel vorbehalten sein
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>Welcome to Jekyll!<span class="blogpost-datum">2015-11-21 08:52:59 +0100</span></h1>
+	  You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+
+To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+
+Jekyll also offers powerful support for code snippets:
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[jekyll-docs]: http://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>Mozilla Dekstop Download Directories<span class="blogpost-datum">2015-05-16 01:17:19 +0200</span></h1>
+	  <p>If you use Firefox or Iceweasel as I do, you may wonder about the “Desktop” and “Download” directories it creates every time you save anything to disk, even if you explicitly set ff to ask you where to save your stuff.
 This can be prevented by creating a ~/.config/user-dirs.dirs file, either with or without real content.
 This is according to http://www.kariliq.nl/misc/firefox-dirs.html and also this old arch forum post: https://bbs.archlinux.org/viewtopic.php?pid=997084#p997084</p>
 
-  </div>
+	</div>
+	
+	<div class="blogpost">
+	  <h1>adjust cursor color for vim and urxvt<span class="blogpost-datum">2015-05-07 21:39:59 +0200</span></h1>
+	  <p>Whenever I used a dark colour scheme for vim (like the excellent <a href="https://github.com/gregsexton/Muon">muon</a> or <a href="https://github.com/larssmit/vim-getafe/tree/master/colors">getafe</a>), I found myself lost beacuse the usually black cursor of my urxvt wouldnt adjust to the dark colour theme. I found that this cant be tweaked in vim, but one can change the color of the urxvt terminal; so, for my needs, 
+URxvt<em>cursorColor:  #D6C0FB
+URxvt</em>cursorBlink:  on
+does the job pretty satisfyingly :-)
+(for reloading the Xresources, use xrdb -load .Xresources. put the same command into ~/.xinitrc to have it loaded on X startup)</p>
 
-</article>
+	</div>
+	
+	<div class="blogpost">
+	  <h1>css completion in vim<span class="blogpost-datum">2015-05-04 14:39:37 +0200</span></h1>
+	  <p>Turning on completion for css items (like e.g. bluefish has and I was missing it severely in vim) is actually pretty <em>easy</em>!
+only :set omnifunc=csscomplete#CompleteCSS and the ctrl-x+ctrl-o will give the possible completions! </p>
 
-  </div>
-  <div class="divider"></div>
-  <div id="header">
-    <h1>Gestos' lustiges Krisenblog</h1>
-  </div>
-  <div class="divider_h"></div>
-  <div id="right">
-  </div>
-</div>
-</div>
-</body>
+<p>see:
+https://docs.oseems.com/general/application/vim/auto-complete-css
+http://vim.wikia.com/wiki/Omni_completion</p>
+
+<p>the first one explains it very nicely and has a screenshot, too :-)</p>
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>vim tabs<span class="blogpost-datum">2015-05-04 03:26:52 +0200</span></h1>
+	  <p>As I’m using vim inside urxvt and screen, it seems close to impossible to map the Ctrl-PgUp/Dn or Ctrl-Tab keybindings for tab-switching. So I was looking for another way. 
+Possible solutions: 
+a) just use gt or gT in command mode; 
+b) work with buffers instead of tabs. There’s a very interesting article here https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/ that lead me to my, now, favourite solution
+c) I like using tabs the wrong way I guess, but the article told me about the “leader” key, which can be defined in the vimrc. That still requires being in command mode, unfortunately, but it’s still pretty quick compared to :tabnext or even :<up>. 
+I mapped the leader key to the spacebar like <code>let mapleader = " "</code> and then gave the tabnext shortcut with <code>nmap <leader><space> :tabnext<cr>&lt;/code&gt;
+that's a nice way to cycle through multiple tabs, I guess</cr></space></leader></code></up></p>
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>ntree<span class="blogpost-datum">2015-05-03 20:25:27 +0200</span></h1>
+	  <p>If you ever felt the need for a small file browser within vim, check out the Nerdtree plugin.
+You can find it here:
+https://github.com/scrooloose/nerdtree
+and theres an installation instruction using pathogen, which I followed and worked for me.
+Once you call it from inside vim via :NERDTree it will open on the left hand side and is pretty straightforward if you scan the help (press “?”) section for some seconds. Great stuff! </p>
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>apache process spawning<span class="blogpost-datum">2015-05-03 00:00:00 +0200</span></h1>
+	  <table>
+  <tbody>
+    <tr>
+      <td>Having had apache running for some hours, I came to notice that there were 5 or more processes, each having several thread, I wondered why this heavy spawning of processes occured. There are several files that can influence apaches behaviour, namely: apache2.conf - keepalive (on</td>
+      <td>off) and in the mods directory mpm_event.conf, mpm_prefork.conf and mpm_worker.conf. Depends on whether the apache is running as prefork or worker module, I guess. You can set MaxSpareServers and the like to lower values, and apache won’t spawn as many child processes. I know nothing about the exact behaviour, especially regarding the keepalive option.</td>
+    </tr>
+  </tbody>
+</table>
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>improved rakefiles<span class="blogpost-datum">2015-05-02 14:52:39 +0200</span></h1>
+	  <p>I definitely need to find out how to insert a more detailed date (minutes) into the post headers that are created by the current rakefile. Damn, I don’t even like ruby… but this should be simple, I guess
+Otherwise posts will appear in the wrong order.</p>
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>customizing, pt. 1<span class="blogpost-datum">2015-05-02 12:52:39 +0200</span></h1>
+	  <p>OK, so I’m trying to figure out how Jekyll and its components work, <strong>very</strong> slowly, step by step.</p>
+
+<p>I want to make some changes to the base layout that this fork came with, and there are several considerations:
+a) I’d like to use git to be able to go back to the original layout, in case I mess up my customization. Maybe it’s possible to clone/fork/branch the repository and keep the current state somewhere archived? -&gt; needs some reading about git
+b) from what I see so far, the default layout refers to a style.css file in the sites basedirectory. Obviously its not the source-directory, but the dir to where the site is actually built. In the base-source-directory, there’s a file called style.scss. From what I know, scss (or/and sass (?)) are preprocessors.
+So most probably style.scss has the parameters that, on building the site, get translated into a “real”, final style.css file, that’s use on the actual finished site. Let’s see what the style.scss contains and how to modify that.
+Also let’s see what page.html and post.html in the _layouts directory contain and to which .css they point, if any. </p>
+
+<p>For this Layout:
+There is a file _sass/_variables.scss which contains variables that can be used in the style.scss file. E.g. I put into the variables file some colors like <em>$gestos_skyblue: #A7CDEF;</em> and into the style.scss I write <em>background: $gestos_skyblue;</em>, then on rebuilding the site, the background will be <em>#A7CDEF</em>;</p>
+
+<p>-just another little trick for switching panes in vim (like from Nerdtree oder the help pane to an open pane) like shown here: http://stackoverflow.com/questions/1656591/how-to-jump-back-to-nerdtree-from-file-in-tab 
+Works in command mode.</p>
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>Hello<span class="blogpost-datum">2015-05-02 02:52:39 +0200</span></h1>
+	  <p>with the modified rakefile i can easily create empty posts with a timestamp in the filename by typing rake post TITLE=’title here’
+however, the rakefile is missing an automated detailed timestamp inside the post. </p>
+
+<p>I took the rakefile from this http://arjanvandergaag.nl/blog/creating-new-jekyll-posts.html site, just had to add <em>require ‘date’</em> somewhere at the beginning.</p>
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>first glance at working with git<span class="blogpost-datum">2014-05-02 12:52:39 +0200</span></h1>
+	  <p>To get the complete “directory” i.e. repository for https://github.com/gestos/gestos.github.io to my local machine I’d just take the “clone url” that sits on the right hand side of the repository and execute [code]git clone https://github.com/gestos/gestos.github.io.git[/code].</p>
+
+<p>This will create a directory (=repository, since it’s a clone of the one at github) called gestos.github.io on the local machine.
+Afaic there’s no _site directory under in this repository, I guess that’s because the actual serving of the site takes place on github and <b>only</b> the “source code” of the site will be in the repository.
+I decided to keep it that way and have my site built to an extra dir with the -d option. So, assuming I’m in my local repository, [code]jekyll build -d /path/to/site/root/[code] will put the actual html for the webserver in a different directory than where we’re fiddling with the settings. Nice :-).
+At this point and because I never had to look into git, this one here http://rogerdudler.github.io/git-guide/ made a nice first aid.
+So, after commiting changes in my local repository I can push the stuff up to the “cloud” at github with git push origin master. This would, I guess, translate to: push TO THE origin (meaning github, I think) THIS master BRANCH (i.e. the directory I’m in or so).
+Ah; there’s a hidden dir called .git in this repository, in which there resides e.g. a file called config that has some info about what is origin and master. I need to figure that out some more - for now it’s ok to see that the above command works.
+just another jchange</p>
+
+	</div>
+	
+      </div>
+    </div>
+    </div>
+  </body>
 </html>

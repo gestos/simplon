@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 
 <html>
-{% include head.html %}
-<body>
+  {% include head.html %}
+  <body>
 
-<div id="blue_box">
-  <div id="left">
-    <a href="/"><img id="gestologo" src="{{ site.baseurl }}/css/pix/me.png"></a>
-    {{ content }}
-  </div>
-  <div class="divider"></div>
-  <div id="header">
-    <h1>Gestos' lustiges Krisenblog</h1>
-  </div>
-  <div class="divider_h"></div>
-  <div id="right">
-  </div>
-</div>
-</div>
-</body>
+    <div id="blue_box">
+      <div id="left">
+	<a href="/"><img id="gestologo" src="{{ site.baseurl }}/css/pix/me.png"></a>
+	<h2>alle posts</h2>
+	{% for i in site.posts %}
+	<div class="home-titel">
+	  <a href="{{ i.url }}">{{ i.title }}</a>
+	</div>
+      {% endfor %}
+      </div>
+      <div class="divider"></div>
+      <div id="header">
+	<h1>Gestos' lustiges Krisenblog</h1>
+      </div>
+      <div class="divider_h"></div>
+      <div id="right">
+	{% for post in site.posts %}
+	<div class="blogpost">
+	  <h1>{{ post.title }}<span class="blogpost-datum">{{ post.date }}</span></h1>
+	  {{ post.content }}
+	</div>
+	{% endfor %}
+      </div>
+    </div>
+    </div>
+  </body>
 </html>
