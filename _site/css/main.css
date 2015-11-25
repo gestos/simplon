@@ -222,7 +222,9 @@ pre, code {
   color: rgba(193, 199, 221, 0.36); }
 
 #right:hover {
-  background-color: rgba(23, 44, 44, 0.3); }
+  box-shadow: 15px -15px 15px -10px rgba(167, 200, 237, 0.54);
+  border-right: 1px solid #88D8F5;
+  border-top: 1px solid #88D8F5; }
 
 #right {
   font-family: Avantgarde;
