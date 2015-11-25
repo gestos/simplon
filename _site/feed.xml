@@ -6,9 +6,37 @@
 </description>
     <link>http://www.gestos.de/</link>
     <atom:link href="http://www.gestos.de/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Nov 2015 03:28:42 +0100</pubDate>
-    <lastBuildDate>Wed, 25 Nov 2015 03:28:42 +0100</lastBuildDate>
+    <pubDate>Wed, 25 Nov 2015 10:20:06 +0100</pubDate>
+    <lastBuildDate>Wed, 25 Nov 2015 10:20:06 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>grub default boot</title>
+        <description>&lt;h2 id=&quot;have-grub-remember-last-choice&quot;&gt;have grub remember last choice&lt;/h2&gt;
+
+&lt;p&gt;One of the things I rarely use and need to look up every time, so why not omit google and write it down here ;)&lt;br /&gt;
+To make grub remember the last kernel I chose to boot, I need to set&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/etc/default/grub:
+
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;solution from &lt;a href=&quot;http://askubuntu.com/questions/148662/how-to-get-grub2-to-remember-last-choice&quot;&gt;askubuntu&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Nov 2015 10:54:27 +0100</pubDate>
+        <link>http://www.gestos.de/linux/debian/grub/2015/11/25/grub-default-boot.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/linux/debian/grub/2015/11/25/grub-default-boot.html</guid>
+        
+        
+        <category>linux</category>
+        
+        <category>debian</category>
+        
+        <category>grub</category>
+        
+      </item>
     
       <item>
         <title>a better vimrc</title>
@@ -179,18 +207,6 @@ Once you call it from inside vim via :NERDTree it will open on the left hand sid
         <pubDate>Sun, 03 May 2015 00:00:00 +0200</pubDate>
         <link>http://www.gestos.de/2015/05/03/apache-process-spawning.html</link>
         <guid isPermaLink="true">http://www.gestos.de/2015/05/03/apache-process-spawning.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>improved rakefiles</title>
-        <description>&lt;p&gt;I definitely need to find out how to insert a more detailed date (minutes) into the post headers that are created by the current rakefile. Damn, I don’t even like ruby… but this should be simple, I guess
-Otherwise posts will appear in the wrong order.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 02 May 2015 14:52:39 +0200</pubDate>
-        <link>http://www.gestos.de/2015/05/02/improved-rakefiles.html</link>
-        <guid isPermaLink="true">http://www.gestos.de/2015/05/02/improved-rakefiles.html</guid>
         
         
       </item>

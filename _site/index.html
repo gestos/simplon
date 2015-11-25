@@ -23,6 +23,10 @@
 	<h2>alle posts</h2>
 	
 	<div class="home-titel">
+	  <a href="/linux/debian/grub/2015/11/25/grub-default-boot.html">grub default boot</a>
+	</div>
+      
+	<div class="home-titel">
 	  <a href="/2015/11/23/a-better-vimrc.html">a better vimrc</a>
 	</div>
       
@@ -81,6 +85,23 @@
       </div>
       <div class="divider_h"></div>
       <div id="right">
+	
+	<div class="blogpost">
+	  <h1>grub default boot<span class="blogpost-datum">2015-11-25 10:54:27 +0100</span></h1>
+	  <h2 id="have-grub-remember-last-choice">have grub remember last choice</h2>
+
+<p>One of the things I rarely use and need to look up every time, so why not omit google and write it down here ;)<br />
+To make grub remember the last kernel I chose to boot, I need to set</p>
+
+<pre><code>/etc/default/grub:
+
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+</code></pre>
+
+<p>solution from <a href="http://askubuntu.com/questions/148662/how-to-get-grub2-to-remember-last-choice">askubuntu</a>.</p>
+
+	</div>
 	
 	<div class="blogpost">
 	  <h1>a better vimrc<span class="blogpost-datum">2015-11-23 11:50:07 +0100</span></h1>
