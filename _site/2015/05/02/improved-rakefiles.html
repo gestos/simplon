@@ -22,6 +22,10 @@
 	<h2>alle posts</h2>
 	
 	<div class="home-titel">
+	  <a href="/2015/11/27/mediawiki.html">mediawiki</a>
+	</div>
+      
+	<div class="home-titel">
 	  <a href="/linux/debian/grub/2015/11/25/grub-default-boot.html">grub default boot</a>
 	</div>
       
@@ -84,6 +88,17 @@
       </div>
       <div class="divider_h"></div>
       <div id="right">
+	
+	<div class="blogpost">
+	  <h1>mediawiki<span class="blogpost-datum">2015-11-27 08:29:25 +0100</span></h1>
+	  ## Anpassungen, um das Panel beutzbar zu machen
+
+Der "Sidebar" inkl. Logo und allem heißt im html "mw-panel". Mit position:fixed bekommt man den fixiert.  
+Entweder in Mediawiki:Common.css oder direkt irgendwo in /mediawiki/ reinschreiben (wo?)  
+Der generierte toc_holder müsste im Portal erscheinen, der entsprechende div heißt '#p-', class 'portal'. toc braucht dann entsprechend nicht mehr 'fixed' zu sein  
+
+
+	</div>
 	
 	<div class="blogpost">
 	  <h1>grub default boot<span class="blogpost-datum">2015-11-25 10:54:27 +0100</span></h1>
@@ -232,7 +247,7 @@ Otherwise posts will appear in the wrong order.</p>
 a) I’d like to use git to be able to go back to the original layout, in case I mess up my customization. Maybe it’s possible to clone/fork/branch the repository and keep the current state somewhere archived? -&gt; needs some reading about git
 b) from what I see so far, the default layout refers to a style.css file in the sites basedirectory. Obviously its not the source-directory, but the dir to where the site is actually built. In the base-source-directory, there’s a file called style.scss. From what I know, scss (or/and sass (?)) are preprocessors.
 So most probably style.scss has the parameters that, on building the site, get translated into a “real”, final style.css file, that’s use on the actual finished site. Let’s see what the style.scss contains and how to modify that.
-Also let’s see what page.html and post.html in the _layouts directory contain and to which .css they point, if any. </p>
+Also let’s see what page.html and post.html in the _layouts directory contain and to which .css they point, if any.</p>
 
 <p>For this Layout:
 There is a file _sass/_variables.scss which contains variables that can be used in the style.scss file. E.g. I put into the variables file some colors like <em>$gestos_skyblue: #A7CDEF;</em> and into the style.scss I write <em>background: $gestos_skyblue;</em>, then on rebuilding the site, the background will be <em>#A7CDEF</em>;</p>
@@ -245,7 +260,7 @@ Works in command mode.</p>
 	<div class="blogpost">
 	  <h1>Hello<span class="blogpost-datum">2015-05-02 02:52:39 +0200</span></h1>
 	  <p>with the modified rakefile i can easily create empty posts with a timestamp in the filename by typing rake post TITLE=’title here’
-however, the rakefile is missing an automated detailed timestamp inside the post. </p>
+however, the rakefile is missing an automated detailed timestamp inside the post.</p>
 
 <p>I took the rakefile from this http://arjanvandergaag.nl/blog/creating-new-jekyll-posts.html site, just had to add <em>require ‘date’</em> somewhere at the beginning.</p>
 

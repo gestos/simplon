@@ -22,6 +22,10 @@
 	<h2>alle posts</h2>
 	
 	<div class="home-titel">
+	  <a href="/2015/11/27/mediawiki.html">mediawiki</a>
+	</div>
+      
+	<div class="home-titel">
 	  <a href="/linux/debian/grub/2015/11/25/grub-default-boot.html">grub default boot</a>
 	</div>
       
@@ -84,6 +88,17 @@
       </div>
       <div class="divider_h"></div>
       <div id="right">
+	
+	<div class="blogpost">
+	  <h1>mediawiki<span class="blogpost-datum">2015-11-27 08:29:25 +0100</span></h1>
+	  ## Anpassungen, um das Panel beutzbar zu machen
+
+Der "Sidebar" inkl. Logo und allem heißt im html "mw-panel". Mit position:fixed bekommt man den fixiert.  
+Entweder in Mediawiki:Common.css oder direkt irgendwo in /mediawiki/ reinschreiben (wo?)  
+Der generierte toc_holder müsste im Portal erscheinen, der entsprechende div heißt '#p-', class 'portal'. toc braucht dann entsprechend nicht mehr 'fixed' zu sein  
+
+
+	</div>
 	
 	<div class="blogpost">
 	  <h1>grub default boot<span class="blogpost-datum">2015-11-25 10:54:27 +0100</span></h1>

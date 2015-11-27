@@ -22,6 +22,10 @@
 	<h2>alle posts</h2>
 	
 	<div class="home-titel">
+	  <a href="/2015/11/27/mediawiki.html">mediawiki</a>
+	</div>
+      
+	<div class="home-titel">
 	  <a href="/linux/debian/grub/2015/11/25/grub-default-boot.html">grub default boot</a>
 	</div>
       
@@ -86,6 +90,17 @@
       <div id="right">
 	
 	<div class="blogpost">
+	  <h1>mediawiki<span class="blogpost-datum">2015-11-27 08:29:25 +0100</span></h1>
+	  ## Anpassungen, um das Panel beutzbar zu machen
+
+Der "Sidebar" inkl. Logo und allem heißt im html "mw-panel". Mit position:fixed bekommt man den fixiert.  
+Entweder in Mediawiki:Common.css oder direkt irgendwo in /mediawiki/ reinschreiben (wo?)  
+Der generierte toc_holder müsste im Portal erscheinen, der entsprechende div heißt '#p-', class 'portal'. toc braucht dann entsprechend nicht mehr 'fixed' zu sein  
+
+
+	</div>
+	
+	<div class="blogpost">
 	  <h1>grub default boot<span class="blogpost-datum">2015-11-25 10:54:27 +0100</span></h1>
 	  ## have grub remember last choice
 
@@ -125,10 +140,10 @@ Der Default-Template für den &lt;head&gt; Abschnitt verweist standardmäßig au
 Was ich also in _sass/_layout.scss hineinschreibe, wird hinterher in _site/css/main.css vorhanden sein.
 Bilder, die auf der geladenen Seite z.b. in pix/bild.jpg verlinkt sind, kommen mit dem verzeichnis (pix) oder ohne in das css verzeichnis.
 nach dem build sind sie dann nach _site/css/(pix)/bild.jpg kopiert.<br />
-Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _posts ordner liegen, nach irgendeiner Vorlage  </p>
+Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _posts ordner liegen, nach irgendeiner Vorlage</p>
 
 <ul>
-  <li>a: eine eigene Seite (die den normalen css enthält, gibts sicher auch noch templates für  </li>
+  <li>a: eine eigene Seite (die den normalen css enthält, gibts sicher auch noch templates für</li>
   <li>b: ein Exzerpt, das mit Datum und Titel an die Stelle, wo { content } eingefügt wurde, gerendert wird</li>
 </ul>
 
@@ -138,17 +153,17 @@ Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _post
 	
 	<div class="blogpost">
 	  <h1>Welcome to Jekyll!<span class="blogpost-datum">2015-11-21 08:52:59 +0100</span></h1>
-	  <p>You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code>jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+	  <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
-<p>To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention <code>YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
 <p>Jekyll also offers powerful support for code snippets:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">&quot;Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
-<span class="c1">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span></code></pre></div>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
 
 <p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
 
@@ -176,7 +191,7 @@ does the job pretty satisfyingly :-)
 	<div class="blogpost">
 	  <h1>css completion in vim<span class="blogpost-datum">2015-05-04 14:39:37 +0200</span></h1>
 	  <p>Turning on completion for css items (like e.g. bluefish has and I was missing it severely in vim) is actually pretty <em>easy</em>!
-only :set omnifunc=csscomplete#CompleteCSS and the ctrl-x+ctrl-o will give the possible completions! </p>
+only :set omnifunc=csscomplete#CompleteCSS and the ctrl-x+ctrl-o will give the possible completions!</p>
 
 <p>see:
 https://docs.oseems.com/general/application/vim/auto-complete-css
@@ -204,7 +219,7 @@ that's a nice way to cycle through multiple tabs, I guess</cr></space></leader><
 You can find it here:
 https://github.com/scrooloose/nerdtree
 and theres an installation instruction using pathogen, which I followed and worked for me.
-Once you call it from inside vim via :NERDTree it will open on the left hand side and is pretty straightforward if you scan the help (press “?”) section for some seconds. Great stuff! </p>
+Once you call it from inside vim via :NERDTree it will open on the left hand side and is pretty straightforward if you scan the help (press “?”) section for some seconds. Great stuff!</p>
 
 	</div>
 	
@@ -236,7 +251,7 @@ Otherwise posts will appear in the wrong order.</p>
 a) I’d like to use git to be able to go back to the original layout, in case I mess up my customization. Maybe it’s possible to clone/fork/branch the repository and keep the current state somewhere archived? -&gt; needs some reading about git
 b) from what I see so far, the default layout refers to a style.css file in the sites basedirectory. Obviously its not the source-directory, but the dir to where the site is actually built. In the base-source-directory, there’s a file called style.scss. From what I know, scss (or/and sass (?)) are preprocessors.
 So most probably style.scss has the parameters that, on building the site, get translated into a “real”, final style.css file, that’s use on the actual finished site. Let’s see what the style.scss contains and how to modify that.
-Also let’s see what page.html and post.html in the _layouts directory contain and to which .css they point, if any. </p>
+Also let’s see what page.html and post.html in the _layouts directory contain and to which .css they point, if any.</p>
 
 <p>For this Layout:
 There is a file _sass/_variables.scss which contains variables that can be used in the style.scss file. E.g. I put into the variables file some colors like <em>$gestos_skyblue: #A7CDEF;</em> and into the style.scss I write <em>background: $gestos_skyblue;</em>, then on rebuilding the site, the background will be <em>#A7CDEF</em>;</p>
@@ -249,7 +264,7 @@ Works in command mode.</p>
 	<div class="blogpost">
 	  <h1>Hello<span class="blogpost-datum">2015-05-02 02:52:39 +0200</span></h1>
 	  <p>with the modified rakefile i can easily create empty posts with a timestamp in the filename by typing rake post TITLE=’title here’
-however, the rakefile is missing an automated detailed timestamp inside the post. </p>
+however, the rakefile is missing an automated detailed timestamp inside the post.</p>
 
 <p>I took the rakefile from this http://arjanvandergaag.nl/blog/creating-new-jekyll-posts.html site, just had to add <em>require ‘date’</em> somewhere at the beginning.</p>
 
