@@ -2,6 +2,12 @@ desc 'create a new draft post'
 
 require 'date'
 
+task :tester do
+
+  print ENV['title']
+end
+
+
 task :post do
 
     title = ENV['title']

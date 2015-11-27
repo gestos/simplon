@@ -23,6 +23,10 @@
 	<h2>alle posts</h2>
 	
 	<div class="home-titel">
+	  <a href="/2015/11/27/common-css.html">common.css</a>
+	</div>
+      
+	<div class="home-titel">
 	  <a href="/2015/11/27/mediawiki.html">mediawiki</a>
 	</div>
       
@@ -89,6 +93,55 @@
       </div>
       <div class="divider_h"></div>
       <div id="right">
+	
+	<div class="blogpost">
+	  <h1>common.css<span class="blogpost-datum">2015-11-27 09:52:37 +0100</span></h1>
+	  <div class="highlighter-rouge"><pre class="highlight"><code>/* CSS placed here will be applied to all skins */
+
+/* this will keep the panel fixed; watch out for the panels content not to exceed standard height */
+#mw-panel {
+position: fixed;
+}
+
+.tocholder {
+line-height: 1em;
+padding: 0px 0px;
+margin: 0px;
+overflow: hidden;
+font-size: 0.85em;
+position: fixed;
+max-height: 70%;
+max-width: 200px;
+overflow-y: auto;
+direction: rtl;
+/* left: 0; */
+/* top: 0; */
+}
+
+#toc, .toc, .mw-warning {
+    border: 0px solid #AAA;
+    background-color: #F9F9F9;
+    padding: 1px;
+    font-size: 75%;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAAAAAA6fptVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAApJREFUCB1j+AYAAPgA9yk7T4wAAAAASUVORK5CYII=");
+}
+
+.tochidden {
+    width: 160px;
+}
+
+#p-navigation {
+padding-top: 2em;
+}
+
+div#mw-panel { 
+width: 12em;
+position: fixed;
+ }
+</code></pre>
+</div>
+
+	</div>
 	
 	<div class="blogpost">
 	  <h1>mediawiki<span class="blogpost-datum">2015-11-27 08:29:25 +0100</span></h1>
