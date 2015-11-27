@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>apache process spawning</title>
-  <meta name="description" content="            Having had apache running for some hours, I came to notice that there were 5 or more processes, each having several thread, I wondered why this h...">
+  <title>mediawiki</title>
+  <meta name="description" content="Anpassungen, um das Panel beutzbar zu machen">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.gestos.de/2015/05/03/apache-process-spawning.html">
+  <link rel="canonical" href="http://www.gestos.de/2015/11/27/mediawiki.html">
   <link rel="alternate" type="application/rss+xml" title="Lustiges Krisenblog" href="http://www.gestos.de/feed.xml">
 </head>
 
@@ -91,138 +91,137 @@
 	
 	<div class="blogpost">
 	  <h1>mediawiki<span class="blogpost-datum">2015-11-27 08:29:25 +0100</span></h1>
-	  ## Anpassungen, um das Panel beutzbar zu machen
+	  <h2 id="anpassungen-um-das-panel-beutzbar-zu-machen">Anpassungen, um das Panel beutzbar zu machen</h2>
 
-Der "Sidebar" inkl. Logo und allem heißt im html "mw-panel". Mit position:fixed bekommt man den fixiert.  
-Entweder in Mediawiki:Common.css oder direkt irgendwo in /mediawiki/ reinschreiben (wo?)  
-Der generierte toc_holder müsste im Portal erscheinen, der entsprechende div heißt '#p-', class 'portal'. toc braucht dann entsprechend nicht mehr 'fixed' zu sein  
+<p>Der “Sidebar” inkl. Logo und allem heißt im html “mw-panel”. Mit position:fixed bekommt man den fixiert.<br />
+Entweder in Mediawiki:Common.css oder direkt irgendwo in /mediawiki/ reinschreiben (wo?)<br />
+Der generierte toc_holder müsste im Portal erscheinen, der entsprechende div heißt ‘#p-‘, class ‘portal’. toc braucht dann entsprechend nicht mehr ‘fixed’ zu sein</p>
 
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>grub default boot<span class="blogpost-datum">2015-11-25 10:54:27 +0100</span></h1>
-	  ## have grub remember last choice
+	  <h2 id="have-grub-remember-last-choice">have grub remember last choice</h2>
 
-One of the things I rarely use and need to look up every time, so why not omit google and write it down here ;)  
-To make grub remember the last kernel I chose to boot, I need to set
+<p>One of the things I rarely use and need to look up every time, so why not omit google and write it down here ;)<br />
+To make grub remember the last kernel I chose to boot, I need to set</p>
 
-~~~
-/etc/default/grub:
+<div class="highlighter-rouge"><pre class="highlight"><code>/etc/default/grub:
 
 GRUB_DEFAULT=saved
 GRUB_SAVEDEFAULT=true
-~~~
+</code></pre>
+</div>
 
-solution from [askubuntu](http://askubuntu.com/questions/148662/how-to-get-grub2-to-remember-last-choice).
+<p>solution from <a href="http://askubuntu.com/questions/148662/how-to-get-grub2-to-remember-last-choice">askubuntu</a>.</p>
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>a better vimrc<span class="blogpost-datum">2015-11-23 11:50:07 +0100</span></h1>
-	  ## Using vim's internal file explorer
+	  <h2 id="using-vims-internal-file-explorer">Using vim’s internal file explorer</h2>
 
-I've seen this on [this](https://medium.com/@mozhuuuuu/vimmers-you-dont-need-nerdtree-18f627b561c3) blogpost while looking up some proper keybindings for the NERDtree plugin.  
-Since I really don't need anything more than just a simple filebrowser that can be toggled into view, this fits all my needs.  
+<p>I’ve seen this on <a href="https://medium.com/@mozhuuuuu/vimmers-you-dont-need-nerdtree-18f627b561c3">this</a> blogpost while looking up some proper keybindings for the NERDtree plugin.<br />
+Since I really don’t need anything more than just a simple filebrowser that can be toggled into view, this fits all my needs.</p>
 
-+  activate the Explorer by type :E in command mode  
-+  type "i" for changing list style or just put *let g:netrw_liststyle=3* in your .vimrc  
-+  hitting enter on a file will open it in a new buffer (nerdtree seems to open files in new tabs)  
-+  if you just want to leave the explorer view, simply go to the next buffer  
-+  I've mapped *:E* to *\<ctrl-e\>* in my .vimrc, although that is only slightly, if at all, more convenient 
+<ul>
+  <li>activate the Explorer by type :E in command mode</li>
+  <li>type “i” for changing list style or just put <em>let g:netrw_liststyle=3</em> in your .vimrc</li>
+  <li>hitting enter on a file will open it in a new buffer (nerdtree seems to open files in new tabs)</li>
+  <li>if you just want to leave the explorer view, simply go to the next buffer</li>
+  <li>I’ve mapped <em>:E</em> to <em>&lt;ctrl-e&gt;</em> in my .vimrc, although that is only slightly, if at all, more convenient</li>
+</ul>
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>Verzeichnisstruktur Jekyll<span class="blogpost-datum">2015-11-22 13:10:59 +0100</span></h1>
-	  Die Locations für verschiedene links in der hinterher erstellten index.html:
-Der Default-Template für den <head> Abschnitt verweist standardmäßig auf /css/main.css
+	  <p>Die Locations für verschiedene links in der hinterher erstellten index.html:
+Der Default-Template für den &lt;head&gt; Abschnitt verweist standardmäßig auf /css/main.css
 Was ich also in _sass/_layout.scss hineinschreibe, wird hinterher in _site/css/main.css vorhanden sein.
 Bilder, die auf der geladenen Seite z.b. in pix/bild.jpg verlinkt sind, kommen mit dem verzeichnis (pix) oder ohne in das css verzeichnis.
-nach dem build sind sie dann nach _site/css/(pix)/bild.jpg kopiert.  
-Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _posts ordner liegen, nach irgendeiner Vorlage  
+nach dem build sind sie dann nach _site/css/(pix)/bild.jpg kopiert.<br />
+Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _posts ordner liegen, nach irgendeiner Vorlage</p>
 
-* a: eine eigene Seite (die den normalen css enthält, gibts sicher auch noch templates für  
-* b: ein Exzerpt, das mit Datum und Titel an die Stelle, wo { content } eingefügt wurde, gerendert wird
+<ul>
+  <li>a: eine eigene Seite (die den normalen css enthält, gibts sicher auch noch templates für</li>
+  <li>b: ein Exzerpt, das mit Datum und Titel an die Stelle, wo { content } eingefügt wurde, gerendert wird</li>
+</ul>
 
-ausserdem nutzt der Standardtemplate anscheinend <h1> tags für die Seitentitel. Das ist natürlich nicht so gut, der Tag sollte ja dem Blogtitel vorbehalten sein
+<p>ausserdem nutzt der Standardtemplate anscheinend &lt;h1&gt; tags für die Seitentitel. Das ist natürlich nicht so gut, der Tag sollte ja dem Blogtitel vorbehalten sein</p>
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>Welcome to Jekyll!<span class="blogpost-datum">2015-11-21 08:52:59 +0100</span></h1>
-	  You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+	  <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
-Jekyll also offers powerful support for code snippets:
+<p>Jekyll also offers powerful support for code snippets:</p>
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
 
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>Mozilla Dekstop Download Directories<span class="blogpost-datum">2015-05-16 01:17:19 +0200</span></h1>
-	  If you use Firefox or Iceweasel as I do, you may wonder about the "Desktop" and "Download" directories it creates every time you save anything to disk, even if you explicitly set ff to ask you where to save your stuff.
+	  <p>If you use Firefox or Iceweasel as I do, you may wonder about the “Desktop” and “Download” directories it creates every time you save anything to disk, even if you explicitly set ff to ask you where to save your stuff.
 This can be prevented by creating a ~/.config/user-dirs.dirs file, either with or without real content.
-This is according to http://www.kariliq.nl/misc/firefox-dirs.html and also this old arch forum post: https://bbs.archlinux.org/viewtopic.php?pid=997084#p997084
+This is according to http://www.kariliq.nl/misc/firefox-dirs.html and also this old arch forum post: https://bbs.archlinux.org/viewtopic.php?pid=997084#p997084</p>
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>adjust cursor color for vim and urxvt<span class="blogpost-datum">2015-05-07 21:39:59 +0200</span></h1>
-	  Whenever I used a dark colour scheme for vim (like the excellent <a href="https://github.com/gregsexton/Muon">muon</a> or <a href="https://github.com/larssmit/vim-getafe/tree/master/colors">getafe</a>), I found myself lost beacuse the usually black cursor of my urxvt wouldnt adjust to the dark colour theme. I found that this cant be tweaked in vim, but one can change the color of the urxvt terminal; so, for my needs, 
-URxvt*cursorColor:  #D6C0FB
-URxvt*cursorBlink:  on
+	  <p>Whenever I used a dark colour scheme for vim (like the excellent <a href="https://github.com/gregsexton/Muon">muon</a> or <a href="https://github.com/larssmit/vim-getafe/tree/master/colors">getafe</a>), I found myself lost beacuse the usually black cursor of my urxvt wouldnt adjust to the dark colour theme. I found that this cant be tweaked in vim, but one can change the color of the urxvt terminal; so, for my needs, 
+URxvt<em>cursorColor:  #D6C0FB
+URxvt</em>cursorBlink:  on
 does the job pretty satisfyingly :-)
-(for reloading the Xresources, use xrdb -load .Xresources. put the same command into ~/.xinitrc to have it loaded on X startup)
+(for reloading the Xresources, use xrdb -load .Xresources. put the same command into ~/.xinitrc to have it loaded on X startup)</p>
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>css completion in vim<span class="blogpost-datum">2015-05-04 14:39:37 +0200</span></h1>
-	  Turning on completion for css items (like e.g. bluefish has and I was missing it severely in vim) is actually pretty *easy*!
-only :set omnifunc=csscomplete#CompleteCSS and the ctrl-x+ctrl-o will give the possible completions! 
+	  <p>Turning on completion for css items (like e.g. bluefish has and I was missing it severely in vim) is actually pretty <em>easy</em>!
+only :set omnifunc=csscomplete#CompleteCSS and the ctrl-x+ctrl-o will give the possible completions!</p>
 
-see:
+<p>see:
 https://docs.oseems.com/general/application/vim/auto-complete-css
-http://vim.wikia.com/wiki/Omni_completion
+http://vim.wikia.com/wiki/Omni_completion</p>
 
-the first one explains it very nicely and has a screenshot, too :-)
+<p>the first one explains it very nicely and has a screenshot, too :-)</p>
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>vim tabs<span class="blogpost-datum">2015-05-04 03:26:52 +0200</span></h1>
-	  As I'm using vim inside urxvt and screen, it seems close to impossible to map the Ctrl-PgUp/Dn or Ctrl-Tab keybindings for tab-switching. So I was looking for another way. 
+	  <p>As I’m using vim inside urxvt and screen, it seems close to impossible to map the Ctrl-PgUp/Dn or Ctrl-Tab keybindings for tab-switching. So I was looking for another way. 
 Possible solutions: 
 a) just use gt or gT in command mode; 
-b) work with buffers instead of tabs. There's a very interesting article here https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/ that lead me to my, now, favourite solution
-c) I like using tabs the wrong way I guess, but the article told me about the "leader" key, which can be defined in the vimrc. That still requires being in command mode, unfortunately, but it's still pretty quick compared to :tabnext or even :<up>. 
-I mapped the leader key to the spacebar like <code>let mapleader = " "</code> and then gave the tabnext shortcut with <code>nmap <leader><space> :tabnext<CR></code>
-that's a nice way to cycle through multiple tabs, I guess
+b) work with buffers instead of tabs. There’s a very interesting article here https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/ that lead me to my, now, favourite solution
+c) I like using tabs the wrong way I guess, but the article told me about the “leader” key, which can be defined in the vimrc. That still requires being in command mode, unfortunately, but it’s still pretty quick compared to :tabnext or even :<up>. 
+I mapped the leader key to the spacebar like <code>let mapleader = " "</code> and then gave the tabnext shortcut with <code>nmap <leader><space> :tabnext<cr>&lt;/code&gt;
+that's a nice way to cycle through multiple tabs, I guess</cr></space></leader></code></up></p>
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>ntree<span class="blogpost-datum">2015-05-03 20:25:27 +0200</span></h1>
-	  If you ever felt the need for a small file browser within vim, check out the Nerdtree plugin.
+	  <p>If you ever felt the need for a small file browser within vim, check out the Nerdtree plugin.
 You can find it here:
 https://github.com/scrooloose/nerdtree
 and theres an installation instruction using pathogen, which I followed and worked for me.
-Once you call it from inside vim via :NERDTree it will open on the left hand side and is pretty straightforward if you scan the help (press "?") section for some seconds. Great stuff! 
+Once you call it from inside vim via :NERDTree it will open on the left hand side and is pretty straightforward if you scan the help (press “?”) section for some seconds. Great stuff!</p>
 
 	</div>
 	

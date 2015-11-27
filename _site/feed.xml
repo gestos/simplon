@@ -6,9 +6,25 @@
 </description>
     <link>http://www.gestos.de/</link>
     <atom:link href="http://www.gestos.de/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Nov 2015 18:20:03 +0100</pubDate>
-    <lastBuildDate>Wed, 25 Nov 2015 18:20:03 +0100</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Fri, 27 Nov 2015 09:08:58 +0100</pubDate>
+    <lastBuildDate>Fri, 27 Nov 2015 09:08:58 +0100</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>mediawiki</title>
+        <description>&lt;h2 id=&quot;anpassungen-um-das-panel-beutzbar-zu-machen&quot;&gt;Anpassungen, um das Panel beutzbar zu machen&lt;/h2&gt;
+
+&lt;p&gt;Der “Sidebar” inkl. Logo und allem heißt im html “mw-panel”. Mit position:fixed bekommt man den fixiert.&lt;br /&gt;
+Entweder in Mediawiki:Common.css oder direkt irgendwo in /mediawiki/ reinschreiben (wo?)&lt;br /&gt;
+Der generierte toc_holder müsste im Portal erscheinen, der entsprechende div heißt ‘#p-‘, class ‘portal’. toc braucht dann entsprechend nicht mehr ‘fixed’ zu sein&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 27 Nov 2015 08:29:25 +0100</pubDate>
+        <link>http://www.gestos.de/2015/11/27/mediawiki.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/2015/11/27/mediawiki.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>grub default boot</title>
@@ -17,11 +33,12 @@
 &lt;p&gt;One of the things I rarely use and need to look up every time, so why not omit google and write it down here ;)&lt;br /&gt;
 To make grub remember the last kernel I chose to boot, I need to set&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;/etc/default/grub:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/etc/default/grub:
 
 GRUB_DEFAULT=saved
 GRUB_SAVEDEFAULT=true
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;solution from &lt;a href=&quot;http://askubuntu.com/questions/148662/how-to-get-grub2-to-remember-last-choice&quot;&gt;askubuntu&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -43,14 +60,14 @@ GRUB_SAVEDEFAULT=true
         <description>&lt;h2 id=&quot;using-vims-internal-file-explorer&quot;&gt;Using vim’s internal file explorer&lt;/h2&gt;
 
 &lt;p&gt;I’ve seen this on &lt;a href=&quot;https://medium.com/@mozhuuuuu/vimmers-you-dont-need-nerdtree-18f627b561c3&quot;&gt;this&lt;/a&gt; blogpost while looking up some proper keybindings for the NERDtree plugin.&lt;br /&gt;
-Since I really don’t need anything more than just a simple filebrowser that can be toggled into view, this fits all my needs.  &lt;/p&gt;
+Since I really don’t need anything more than just a simple filebrowser that can be toggled into view, this fits all my needs.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;activate the Explorer by type :E in command mode  &lt;/li&gt;
-  &lt;li&gt;type “i” for changing list style or just put &lt;em&gt;let g:netrw_liststyle=3&lt;/em&gt; in your .vimrc  &lt;/li&gt;
-  &lt;li&gt;hitting enter on a file will open it in a new buffer (nerdtree seems to open files in new tabs)  &lt;/li&gt;
-  &lt;li&gt;if you just want to leave the explorer view, simply go to the next buffer  &lt;/li&gt;
-  &lt;li&gt;I’ve mapped &lt;em&gt;:E&lt;/em&gt; to &lt;em&gt;&amp;lt;ctrl-e&amp;gt;&lt;/em&gt; in my .vimrc, although that is only slightly, if at all, more convenient &lt;/li&gt;
+  &lt;li&gt;activate the Explorer by type :E in command mode&lt;/li&gt;
+  &lt;li&gt;type “i” for changing list style or just put &lt;em&gt;let g:netrw_liststyle=3&lt;/em&gt; in your .vimrc&lt;/li&gt;
+  &lt;li&gt;hitting enter on a file will open it in a new buffer (nerdtree seems to open files in new tabs)&lt;/li&gt;
+  &lt;li&gt;if you just want to leave the explorer view, simply go to the next buffer&lt;/li&gt;
+  &lt;li&gt;I’ve mapped &lt;em&gt;:E&lt;/em&gt; to &lt;em&gt;&amp;lt;ctrl-e&amp;gt;&lt;/em&gt; in my .vimrc, although that is only slightly, if at all, more convenient&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 23 Nov 2015 11:50:07 +0100</pubDate>
@@ -67,10 +84,10 @@ Der Default-Template für den &amp;lt;head&amp;gt; Abschnitt verweist standardm�
 Was ich also in _sass/_layout.scss hineinschreibe, wird hinterher in _site/css/main.css vorhanden sein.
 Bilder, die auf der geladenen Seite z.b. in pix/bild.jpg verlinkt sind, kommen mit dem verzeichnis (pix) oder ohne in das css verzeichnis.
 nach dem build sind sie dann nach _site/css/(pix)/bild.jpg kopiert.&lt;br /&gt;
-Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _posts ordner liegen, nach irgendeiner Vorlage  &lt;/p&gt;
+Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _posts ordner liegen, nach irgendeiner Vorlage&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;a: eine eigene Seite (die den normalen css enthält, gibts sicher auch noch templates für  &lt;/li&gt;
+  &lt;li&gt;a: eine eigene Seite (die den normalen css enthält, gibts sicher auch noch templates für&lt;/li&gt;
   &lt;li&gt;b: ein Exzerpt, das mit Datum und Titel an die Stelle, wo { content } eingefügt wurde, gerendert wird&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -89,17 +106,17 @@ Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _post
     
       <item>
         <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
 &lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
@@ -146,7 +163,7 @@ does the job pretty satisfyingly :-)
       <item>
         <title>css completion in vim</title>
         <description>&lt;p&gt;Turning on completion for css items (like e.g. bluefish has and I was missing it severely in vim) is actually pretty &lt;em&gt;easy&lt;/em&gt;!
-only :set omnifunc=csscomplete#CompleteCSS and the ctrl-x+ctrl-o will give the possible completions! &lt;/p&gt;
+only :set omnifunc=csscomplete#CompleteCSS and the ctrl-x+ctrl-o will give the possible completions!&lt;/p&gt;
 
 &lt;p&gt;see:
 https://docs.oseems.com/general/application/vim/auto-complete-css
@@ -184,29 +201,11 @@ that&#39;s a nice way to cycle through multiple tabs, I guess&lt;/cr&gt;&lt;/spa
 You can find it here:
 https://github.com/scrooloose/nerdtree
 and theres an installation instruction using pathogen, which I followed and worked for me.
-Once you call it from inside vim via :NERDTree it will open on the left hand side and is pretty straightforward if you scan the help (press “?”) section for some seconds. Great stuff! &lt;/p&gt;
+Once you call it from inside vim via :NERDTree it will open on the left hand side and is pretty straightforward if you scan the help (press “?”) section for some seconds. Great stuff!&lt;/p&gt;
 </description>
         <pubDate>Sun, 03 May 2015 20:25:27 +0200</pubDate>
         <link>http://www.gestos.de/2015/05/03/ntree.html</link>
         <guid isPermaLink="true">http://www.gestos.de/2015/05/03/ntree.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>apache process spawning</title>
-        <description>&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Having had apache running for some hours, I came to notice that there were 5 or more processes, each having several thread, I wondered why this heavy spawning of processes occured. There are several files that can influence apaches behaviour, namely: apache2.conf - keepalive (on&lt;/td&gt;
-      &lt;td&gt;off) and in the mods directory mpm_event.conf, mpm_prefork.conf and mpm_worker.conf. Depends on whether the apache is running as prefork or worker module, I guess. You can set MaxSpareServers and the like to lower values, and apache won’t spawn as many child processes. I know nothing about the exact behaviour, especially regarding the keepalive option.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        <pubDate>Sun, 03 May 2015 00:00:00 +0200</pubDate>
-        <link>http://www.gestos.de/2015/05/03/apache-process-spawning.html</link>
-        <guid isPermaLink="true">http://www.gestos.de/2015/05/03/apache-process-spawning.html</guid>
         
         
       </item>
