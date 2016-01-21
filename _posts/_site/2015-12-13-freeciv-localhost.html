@@ -1,0 +1,6 @@
+<h2 id="problems-starting-local-freeciv-games">problems starting local freeciv games</h2>
+<p>I ran into this several times and spent hours looking for the solution, forgetting it immediately afterwards.<br />
+When the freeciv client can’t connect to the local server, although it’s up and running and everything in /etc/hosts and resolv.conf seems to be fine:<br />
+the /etc/hosts file comes by default with an ipv6 entry like localhost ::1<br />
+This will make the client search for the server with the ipv6 protocol. In my case, ipv6 is not available, yet the entry is still there.
+Out-commenting that line will make things work ;-).</p>

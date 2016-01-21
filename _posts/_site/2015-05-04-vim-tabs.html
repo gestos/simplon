@@ -1,0 +1,7 @@
+<p>As I’m using vim inside urxvt and screen, it seems close to impossible to map the Ctrl-PgUp/Dn or Ctrl-Tab keybindings for tab-switching. So I was looking for another way. 
+Possible solutions: 
+a) just use gt or gT in command mode; 
+b) work with buffers instead of tabs. There’s a very interesting article here https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/ that lead me to my, now, favourite solution
+c) I like using tabs the wrong way I guess, but the article told me about the “leader” key, which can be defined in the vimrc. That still requires being in command mode, unfortunately, but it’s still pretty quick compared to :tabnext or even :<up>. 
+I mapped the leader key to the spacebar like <code>let mapleader = " "</code> and then gave the tabnext shortcut with <code>nmap <leader><space> :tabnext<cr>&lt;/code&gt;
+that's a nice way to cycle through multiple tabs, I guess</cr></space></leader></code></up></p>

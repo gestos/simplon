@@ -22,6 +22,22 @@
 	<h2>alle posts</h2>
 	
 	<div class="home-titel">
+	  <a href="/2016/01/21/1000.html">1000</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2016/01/21/fileselection-with-ranger.html">fileselection with ranger</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/12/13/freeciv-localhost.html">freeciv localhost</a>
+	</div>
+      
+	<div class="home-titel">
+	  <a href="/2015/12/09/dhcpcd-resolvconf.html">dhcpcd ohne dns</a>
+	</div>
+      
+	<div class="home-titel">
 	  <a href="/2015/11/27/common-css.html">common.css</a>
 	</div>
       
@@ -92,6 +108,59 @@
       </div>
       <div class="divider_h"></div>
       <div id="right">
+	
+	<div class="blogpost">
+	  <h1>1000<span class="blogpost-datum">2016-01-21 10:02:13 +0100</span></h1>
+	  posts in jekyll werden nicht generiert, wenn hinter der Uhrzeit im Datumsheader das "+0100" fehlt!
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>fileselection with ranger<span class="blogpost-datum">2016-01-21 09:19:37 +0100</span></h1>
+	  ## files wählen und in eine Liste schreiben mit ranger
+
+In /home/keuch/Downloads/ranger-1.7.2/ranger/core/actions.py ab Zeile 224:
+Dort würde, wenn es keinen "self.fm.copy_buffer" gibt, die "else"-Bedingung MACRO_FAIL greifen.
+Stattdessen habe ich jetzt dort eingetragen, daß "%f", d.h. die Datei, über der sich der Cursor befindet, gewählt wird.
+
+        if self.fm.copy_buffer:
+            macros['c'] = [fl.path for fl in self.fm.copy_buffer]
+        else:
+            # Versuch, aus einem leeren copybuffer die aktuelle Highlight-Selektion zu machen
+            # macros['c'] = MACRO_FAIL
+            macros['c'] = [self.fm.thisfile.relative_path]
+
+Die Änderung ist zunächst in einer "standalone" Version funktionabel (siehe Pfad oben). Wo genau das in einer Debian-/Gentoo-Variante eingtragen wird, müßte man nachgucken.
+
+Im Ranger selber kann man dann die Macros an die shell übegeben.
+Hierzu habe ich in $HOME/.config/ranger/rc.conf folgenden Keyboardshortcut eingetragen:
+map tl echo "%c" >> /home/keuch/files_list_by_ranger || sed "s,'\ ,'\n,g" >> /home/keuch/files_list_by_ranger
+was dann zu einer Liste mit je einem Eintrag pro Zeile führt.
+
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>freeciv localhost<span class="blogpost-datum">2015-12-13 11:11:02 +0100</span></h1>
+	  ## problems starting local freeciv games
+I ran into this several times and spent hours looking for the solution, forgetting it immediately afterwards.  
+When the freeciv client can't connect to the local server, although it's up and running and everything in /etc/hosts and resolv.conf seems to be fine:  
+the /etc/hosts file comes by default with an ipv6 entry like localhost ::1  
+This will make the client search for the server with the ipv6 protocol. In my case, ipv6 is not available, yet the entry is still there.
+Out-commenting that line will make things work ;-).
+
+	</div>
+	
+	<div class="blogpost">
+	  <h1>dhcpcd ohne dns<span class="blogpost-datum">2015-12-09 21:40:00 +0100</span></h1>
+	  ## dhcpcd daran hindern, den Nameserver vom dhcp-Server zu beziehen
+
+Um zu verhindern, daß dhcpcd jedes Mal vom dhcp-Server den dns-server zieht und resolv.conf überschreibt, hilft folgender Eintrag in /etc/dhcpcd.conf:  
+<code>nohook resolv.conf</code>
+Siehe [archlinux wiki](https://wiki.archlinux.org/index.php/Resolv.conf#Modify_the_dhcpcd_config)
+Andere Lösungen sind entweder an die NIC gebunden (siehe [gentoo wiki](https://forums.gentoo.org/viewtopic-p-6183922.html?sid=0bf842f147608b18fdb3d78194fc83dd#6183922)) oder funktionieren einfach nicht (statischer DNS in dhcpcd.conf wie im Arch-wiki beschrieben).
+
+	</div>
 	
 	<div class="blogpost">
 	  <h1>common.css<span class="blogpost-datum">2015-11-27 09:52:37 +0100</span></h1>

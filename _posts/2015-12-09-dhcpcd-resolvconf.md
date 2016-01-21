@@ -1,6 +1,6 @@
 ---
 layout: post
-title: mediawiki
+title: dhcpcd ohne dns
 categories:
 date: 2015-12-09 21:40:00 +0100
 ---

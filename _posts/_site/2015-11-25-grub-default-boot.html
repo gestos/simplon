@@ -1,0 +1,13 @@
+<h2 id="have-grub-remember-last-choice">have grub remember last choice</h2>
+
+<p>One of the things I rarely use and need to look up every time, so why not omit google and write it down here ;)<br />
+To make grub remember the last kernel I chose to boot, I need to set</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/etc/default/grub:
+
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+</code></pre>
+</div>
+
+<p>solution from <a href="http://askubuntu.com/questions/148662/how-to-get-grub2-to-remember-last-choice">askubuntu</a>.</p>

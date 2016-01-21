@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Lustiges Krisenblog</title>
-  <meta name="description" content="Spielplatz zum Design (und Jekyll) ausprobieren eventuell auch mal Content zu publizieren
-">
+  <title>dhcpcd ohne dns</title>
+  <meta name="description" content="dhcpcd daran hindern, den Nameserver vom dhcp-Server zu beziehen">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.gestos.de/">
+  <link rel="canonical" href="http://www.gestos.de/2015/12/09/dhcpcd-resolvconf.html">
   <link rel="alternate" type="application/rss+xml" title="Lustiges Krisenblog" href="http://www.gestos.de/feed.xml">
 </head>
 
@@ -112,45 +111,43 @@
 	
 	<div class="blogpost">
 	  <h1>1000<span class="blogpost-datum">2016-01-21 10:02:13 +0100</span></h1>
-	  <p>posts in jekyll werden nicht generiert, wenn hinter der Uhrzeit im Datumsheader das “+0100” fehlt!</p>
+	  posts in jekyll werden nicht generiert, wenn hinter der Uhrzeit im Datumsheader das "+0100" fehlt!
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>fileselection with ranger<span class="blogpost-datum">2016-01-21 09:19:37 +0100</span></h1>
-	  <h2 id="files-whlen-und-in-eine-liste-schreiben-mit-ranger">files wählen und in eine Liste schreiben mit ranger</h2>
+	  ## files wählen und in eine Liste schreiben mit ranger
 
-<p>In /home/keuch/Downloads/ranger-1.7.2/ranger/core/actions.py ab Zeile 224:
-Dort würde, wenn es keinen “self.fm.copy_buffer” gibt, die “else”-Bedingung MACRO_FAIL greifen.
-Stattdessen habe ich jetzt dort eingetragen, daß “%f”, d.h. die Datei, über der sich der Cursor befindet, gewählt wird.</p>
+In /home/keuch/Downloads/ranger-1.7.2/ranger/core/actions.py ab Zeile 224:
+Dort würde, wenn es keinen "self.fm.copy_buffer" gibt, die "else"-Bedingung MACRO_FAIL greifen.
+Stattdessen habe ich jetzt dort eingetragen, daß "%f", d.h. die Datei, über der sich der Cursor befindet, gewählt wird.
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    if self.fm.copy_buffer:
-        macros['c'] = [fl.path for fl in self.fm.copy_buffer]
-    else:
-        # Versuch, aus einem leeren copybuffer die aktuelle Highlight-Selektion zu machen
-        # macros['c'] = MACRO_FAIL
-        macros['c'] = [self.fm.thisfile.relative_path]
-</code></pre>
-</div>
+        if self.fm.copy_buffer:
+            macros['c'] = [fl.path for fl in self.fm.copy_buffer]
+        else:
+            # Versuch, aus einem leeren copybuffer die aktuelle Highlight-Selektion zu machen
+            # macros['c'] = MACRO_FAIL
+            macros['c'] = [self.fm.thisfile.relative_path]
 
-<p>Die Änderung ist zunächst in einer “standalone” Version funktionabel (siehe Pfad oben). Wo genau das in einer Debian-/Gentoo-Variante eingtragen wird, müßte man nachgucken.</p>
+Die Änderung ist zunächst in einer "standalone" Version funktionabel (siehe Pfad oben). Wo genau das in einer Debian-/Gentoo-Variante eingtragen wird, müßte man nachgucken.
 
-<p>Im Ranger selber kann man dann die Macros an die shell übegeben.
+Im Ranger selber kann man dann die Macros an die shell übegeben.
 Hierzu habe ich in $HOME/.config/ranger/rc.conf folgenden Keyboardshortcut eingetragen:
-map tl echo “%c” » /home/keuch/files_list_by_ranger || sed “s,’\ ,’\n,g” » /home/keuch/files_list_by_ranger
-was dann zu einer Liste mit je einem Eintrag pro Zeile führt.</p>
+map tl echo "%c" >> /home/keuch/files_list_by_ranger || sed "s,'\ ,'\n,g" >> /home/keuch/files_list_by_ranger
+was dann zu einer Liste mit je einem Eintrag pro Zeile führt.
 
 
 	</div>
 	
 	<div class="blogpost">
 	  <h1>freeciv localhost<span class="blogpost-datum">2015-12-13 11:11:02 +0100</span></h1>
-	  <h2 id="problems-starting-local-freeciv-games">problems starting local freeciv games</h2>
-<p>I ran into this several times and spent hours looking for the solution, forgetting it immediately afterwards.<br />
-When the freeciv client can’t connect to the local server, although it’s up and running and everything in /etc/hosts and resolv.conf seems to be fine:<br />
-the /etc/hosts file comes by default with an ipv6 entry like localhost ::1<br />
+	  ## problems starting local freeciv games
+I ran into this several times and spent hours looking for the solution, forgetting it immediately afterwards.  
+When the freeciv client can't connect to the local server, although it's up and running and everything in /etc/hosts and resolv.conf seems to be fine:  
+the /etc/hosts file comes by default with an ipv6 entry like localhost ::1  
 This will make the client search for the server with the ipv6 protocol. In my case, ipv6 is not available, yet the entry is still there.
-Out-commenting that line will make things work ;-).</p>
+Out-commenting that line will make things work ;-).
 
 	</div>
 	

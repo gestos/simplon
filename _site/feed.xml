@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lustiges Krisenblog</title>
+    <description>Spielplatz zum Design (und Jekyll) ausprobieren eventuell auch mal Content zu publizieren
+</description>
+    <link>http://www.gestos.de/</link>
+    <atom:link href="http://www.gestos.de/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 21 Jan 2016 10:18:51 +0100</pubDate>
+    <lastBuildDate>Thu, 21 Jan 2016 10:18:51 +0100</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>1000</title>
+        <description>&lt;p&gt;posts in jekyll werden nicht generiert, wenn hinter der Uhrzeit im Datumsheader das “+0100” fehlt!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Jan 2016 10:02:13 +0100</pubDate>
+        <link>http://www.gestos.de/2016/01/21/1000.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/2016/01/21/1000.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>fileselection with ranger</title>
+        <description>&lt;h2 id=&quot;files-whlen-und-in-eine-liste-schreiben-mit-ranger&quot;&gt;files wählen und in eine Liste schreiben mit ranger&lt;/h2&gt;
+
+&lt;p&gt;In /home/keuch/Downloads/ranger-1.7.2/ranger/core/actions.py ab Zeile 224:
+Dort würde, wenn es keinen “self.fm.copy_buffer” gibt, die “else”-Bedingung MACRO_FAIL greifen.
+Stattdessen habe ich jetzt dort eingetragen, daß “%f”, d.h. die Datei, über der sich der Cursor befindet, gewählt wird.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    if self.fm.copy_buffer:
+        macros[&#39;c&#39;] = [fl.path for fl in self.fm.copy_buffer]
+    else:
+        # Versuch, aus einem leeren copybuffer die aktuelle Highlight-Selektion zu machen
+        # macros[&#39;c&#39;] = MACRO_FAIL
+        macros[&#39;c&#39;] = [self.fm.thisfile.relative_path]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Die Änderung ist zunächst in einer “standalone” Version funktionabel (siehe Pfad oben). Wo genau das in einer Debian-/Gentoo-Variante eingtragen wird, müßte man nachgucken.&lt;/p&gt;
+
+&lt;p&gt;Im Ranger selber kann man dann die Macros an die shell übegeben.
+Hierzu habe ich in $HOME/.config/ranger/rc.conf folgenden Keyboardshortcut eingetragen:
+map tl echo “%c” » /home/keuch/files_list_by_ranger || sed “s,’\ ,’\n,g” » /home/keuch/files_list_by_ranger
+was dann zu einer Liste mit je einem Eintrag pro Zeile führt.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 21 Jan 2016 09:19:37 +0100</pubDate>
+        <link>http://www.gestos.de/2016/01/21/fileselection-with-ranger.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/2016/01/21/fileselection-with-ranger.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>freeciv localhost</title>
+        <description>&lt;h2 id=&quot;problems-starting-local-freeciv-games&quot;&gt;problems starting local freeciv games&lt;/h2&gt;
+&lt;p&gt;I ran into this several times and spent hours looking for the solution, forgetting it immediately afterwards.&lt;br /&gt;
+When the freeciv client can’t connect to the local server, although it’s up and running and everything in /etc/hosts and resolv.conf seems to be fine:&lt;br /&gt;
+the /etc/hosts file comes by default with an ipv6 entry like localhost ::1&lt;br /&gt;
+This will make the client search for the server with the ipv6 protocol. In my case, ipv6 is not available, yet the entry is still there.
+Out-commenting that line will make things work ;-).&lt;/p&gt;
+</description>
+        <pubDate>Sun, 13 Dec 2015 11:11:02 +0100</pubDate>
+        <link>http://www.gestos.de/2015/12/13/freeciv-localhost.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/2015/12/13/freeciv-localhost.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>dhcpcd ohne dns</title>
+        <description>&lt;h2 id=&quot;dhcpcd-daran-hindern-den-nameserver-vom-dhcp-server-zu-beziehen&quot;&gt;dhcpcd daran hindern, den Nameserver vom dhcp-Server zu beziehen&lt;/h2&gt;
+
+&lt;p&gt;Um zu verhindern, daß dhcpcd jedes Mal vom dhcp-Server den dns-server zieht und resolv.conf überschreibt, hilft folgender Eintrag in /etc/dhcpcd.conf:&lt;br /&gt;
+&lt;code&gt;nohook resolv.conf&lt;/code&gt;
+Siehe &lt;a href=&quot;https://wiki.archlinux.org/index.php/Resolv.conf#Modify_the_dhcpcd_config&quot;&gt;archlinux wiki&lt;/a&gt;
+Andere Lösungen sind entweder an die NIC gebunden (siehe &lt;a href=&quot;https://forums.gentoo.org/viewtopic-p-6183922.html?sid=0bf842f147608b18fdb3d78194fc83dd#6183922&quot;&gt;gentoo wiki&lt;/a&gt;) oder funktionieren einfach nicht (statischer DNS in dhcpcd.conf wie im Arch-wiki beschrieben).&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 Dec 2015 21:40:00 +0100</pubDate>
+        <link>http://www.gestos.de/2015/12/09/dhcpcd-resolvconf.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/2015/12/09/dhcpcd-resolvconf.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>common.css</title>
+        <description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* CSS placed here will be applied to all skins */
+
+/* this will keep the panel fixed; watch out for the panels content not to exceed standard height */
+#mw-panel {
+position: fixed;
+}
+
+.tocholder {
+line-height: 1em;
+padding: 0px 0px;
+margin: 0px;
+overflow: hidden;
+font-size: 0.85em;
+position: fixed;
+max-height: 70%;
+max-width: 200px;
+overflow-y: auto;
+direction: rtl;
+/* left: 0; */
+/* top: 0; */
+}
+
+#toc, .toc, .mw-warning {
+    border: 0px solid #AAA;
+    background-color: #F9F9F9;
+    padding: 1px;
+    font-size: 75%;
+    background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAAAAAA6fptVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAApJREFUCB1j+AYAAPgA9yk7T4wAAAAASUVORK5CYII=&quot;);
+}
+
+.tochidden {
+    width: 160px;
+}
+
+#p-navigation {
+padding-top: 2em;
+}
+
+div#mw-panel { 
+width: 12em;
+position: fixed;
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 27 Nov 2015 09:52:37 +0100</pubDate>
+        <link>http://www.gestos.de/2015/11/27/common-css.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/2015/11/27/common-css.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>mediawiki</title>
+        <description>&lt;h2 id=&quot;anpassungen-um-das-panel-beutzbar-zu-machen&quot;&gt;Anpassungen, um das Panel beutzbar zu machen&lt;/h2&gt;
+
+&lt;p&gt;Der “Sidebar” inkl. Logo und allem heißt im html “mw-panel”. Mit position:fixed bekommt man den fixiert.&lt;br /&gt;
+Entweder in Mediawiki:Common.css oder direkt irgendwo in /mediawiki/ reinschreiben (wo?)&lt;br /&gt;
+Der generierte toc_holder müsste im Portal erscheinen, der entsprechende div heißt ‘#p-‘, class ‘portal’. toc braucht dann entsprechend nicht mehr ‘fixed’ zu sein&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 27 Nov 2015 08:29:25 +0100</pubDate>
+        <link>http://www.gestos.de/2015/11/27/mediawiki.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/2015/11/27/mediawiki.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>grub default boot</title>
+        <description>&lt;h2 id=&quot;have-grub-remember-last-choice&quot;&gt;have grub remember last choice&lt;/h2&gt;
+
+&lt;p&gt;One of the things I rarely use and need to look up every time, so why not omit google and write it down here ;)&lt;br /&gt;
+To make grub remember the last kernel I chose to boot, I need to set&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/etc/default/grub:
+
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;solution from &lt;a href=&quot;http://askubuntu.com/questions/148662/how-to-get-grub2-to-remember-last-choice&quot;&gt;askubuntu&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Nov 2015 10:54:27 +0100</pubDate>
+        <link>http://www.gestos.de/linux/debian/grub/2015/11/25/grub-default-boot.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/linux/debian/grub/2015/11/25/grub-default-boot.html</guid>
+        
+        
+        <category>linux</category>
+        
+        <category>debian</category>
+        
+        <category>grub</category>
+        
+      </item>
+    
+      <item>
+        <title>a better vimrc</title>
+        <description>&lt;h2 id=&quot;using-vims-internal-file-explorer&quot;&gt;Using vim’s internal file explorer&lt;/h2&gt;
+
+&lt;p&gt;I’ve seen this on &lt;a href=&quot;https://medium.com/@mozhuuuuu/vimmers-you-dont-need-nerdtree-18f627b561c3&quot;&gt;this&lt;/a&gt; blogpost while looking up some proper keybindings for the NERDtree plugin.&lt;br /&gt;
+Since I really don’t need anything more than just a simple filebrowser that can be toggled into view, this fits all my needs.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;activate the Explorer by type :E in command mode&lt;/li&gt;
+  &lt;li&gt;type “i” for changing list style or just put &lt;em&gt;let g:netrw_liststyle=3&lt;/em&gt; in your .vimrc&lt;/li&gt;
+  &lt;li&gt;hitting enter on a file will open it in a new buffer (nerdtree seems to open files in new tabs)&lt;/li&gt;
+  &lt;li&gt;if you just want to leave the explorer view, simply go to the next buffer&lt;/li&gt;
+  &lt;li&gt;I’ve mapped &lt;em&gt;:E&lt;/em&gt; to &lt;em&gt;&amp;lt;ctrl-e&amp;gt;&lt;/em&gt; in my .vimrc, although that is only slightly, if at all, more convenient&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 23 Nov 2015 11:50:07 +0100</pubDate>
+        <link>http://www.gestos.de/2015/11/23/a-better-vimrc.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/2015/11/23/a-better-vimrc.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Verzeichnisstruktur Jekyll</title>
+        <description>&lt;p&gt;Die Locations für verschiedene links in der hinterher erstellten index.html:
+Der Default-Template für den &amp;lt;head&amp;gt; Abschnitt verweist standardmäßig auf /css/main.css
+Was ich also in _sass/_layout.scss hineinschreibe, wird hinterher in _site/css/main.css vorhanden sein.
+Bilder, die auf der geladenen Seite z.b. in pix/bild.jpg verlinkt sind, kommen mit dem verzeichnis (pix) oder ohne in das css verzeichnis.
+nach dem build sind sie dann nach _site/css/(pix)/bild.jpg kopiert.&lt;br /&gt;
+Der { content } tag rendert dann anscheinend aus allen .md Dateien, die im _posts ordner liegen, nach irgendeiner Vorlage&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a: eine eigene Seite (die den normalen css enthält, gibts sicher auch noch templates für&lt;/li&gt;
+  &lt;li&gt;b: ein Exzerpt, das mit Datum und Titel an die Stelle, wo { content } eingefügt wurde, gerendert wird&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ausserdem nutzt der Standardtemplate anscheinend &amp;lt;h1&amp;gt; tags für die Seitentitel. Das ist natürlich nicht so gut, der Tag sollte ja dem Blogtitel vorbehalten sein&lt;/p&gt;
+</description>
+        <pubDate>Sun, 22 Nov 2015 13:10:59 +0100</pubDate>
+        <link>http://www.gestos.de/jekyll/update/2015/11/22/where.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/jekyll/update/2015/11/22/where.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 21 Nov 2015 08:52:59 +0100</pubDate>
+        <link>http://www.gestos.de/jekyll/update/2015/11/21/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://www.gestos.de/jekyll/update/2015/11/21/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>
