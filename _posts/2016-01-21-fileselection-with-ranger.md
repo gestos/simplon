@@ -25,3 +25,7 @@ Hierzu habe ich in $HOME/.config/ranger/rc.conf folgenden Keyboardshortcut einge
 map tl echo "%c" >> /home/keuch/files_list_by_ranger || sed "s,'\ ,'\n,g" >> /home/keuch/files_list_by_ranger
 was dann zu einer Liste mit je einem Eintrag pro Zeile führt.
 
+Auf meinem derzeitigen Gentoo wäre die Datei /usr/lib/python2.7/site-packages/ranger/core/actions.py
+(nicht python3.4 - dort gibt es auch actions.py. Wurde anscheinend von meinem System für beide Versionen installert.
+
+Funktioniert direkt nach editieren der Datei, weil der Python-Code interpretiert und nicht erst kompiliert wird.
