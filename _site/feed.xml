@@ -6,8 +6,8 @@
 </description>
     <link>http://www.gestos.de/</link>
     <atom:link href="http://www.gestos.de/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Jan 2016 10:18:51 +0100</pubDate>
-    <lastBuildDate>Thu, 21 Jan 2016 10:18:51 +0100</lastBuildDate>
+    <pubDate>Fri, 22 Jan 2016 07:12:08 +0100</pubDate>
+    <lastBuildDate>Fri, 22 Jan 2016 07:12:08 +0100</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -45,6 +45,10 @@ Hierzu habe ich in $HOME/.config/ranger/rc.conf folgenden Keyboardshortcut einge
 map tl echo “%c” » /home/keuch/files_list_by_ranger || sed “s,’\ ,’\n,g” » /home/keuch/files_list_by_ranger
 was dann zu einer Liste mit je einem Eintrag pro Zeile führt.&lt;/p&gt;
 
+&lt;p&gt;Auf meinem derzeitigen Gentoo wäre die Datei /usr/lib/python2.7/site-packages/ranger/core/actions.py
+(nicht python3.4 - dort gibt es auch actions.py. Wurde anscheinend von meinem System für beide Versionen installert.&lt;/p&gt;
+
+&lt;p&gt;Funktioniert direkt nach editieren der Datei, weil der Python-Code interpretiert und nicht erst kompiliert wird.&lt;/p&gt;
 </description>
         <pubDate>Thu, 21 Jan 2016 09:19:37 +0100</pubDate>
         <link>http://www.gestos.de/2016/01/21/fileselection-with-ranger.html</link>
