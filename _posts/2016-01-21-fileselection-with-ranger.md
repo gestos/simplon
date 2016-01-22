@@ -22,7 +22,7 @@ Die Änderung ist zunächst in einer "standalone" Version funktionabel (siehe Pf
 
 Im Ranger selber kann man dann die Macros an die shell übegeben.
 Hierzu habe ich in $HOME/.config/ranger/rc.conf folgenden Keyboardshortcut eingetragen:
-map tl echo "%c" >> /home/keuch/files_list_by_ranger || sed "s,'\ ,'\n,g" >> /home/keuch/files_list_by_ranger
+map tl shell echo "%c" >> /home/keuch/files_list_by_ranger || sed "s,'\ ,'\n,g" >> /home/keuch/files_list_by_ranger
 was dann zu einer Liste mit je einem Eintrag pro Zeile führt.
 
 Auf meinem derzeitigen Gentoo wäre die Datei /usr/lib/python2.7/site-packages/ranger/core/actions.py
